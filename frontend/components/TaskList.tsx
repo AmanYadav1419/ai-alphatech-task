@@ -2,8 +2,10 @@ import {
   Table, TableHead, TableRow, TableCell, TableBody,
   Checkbox, IconButton, Chip
 } from '@mui/material';
-import { Edit, Delete } from '@mui/icons-material';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { Task } from '@/types/task';
+
 
 export default function TaskList({
   tasks, onEdit, onDelete, onToggle
@@ -38,8 +40,8 @@ export default function TaskList({
             </TableCell>
             <TableCell>{task.description}</TableCell>
             <TableCell>
-              <IconButton onClick={() => onEdit(task)}><Edit /></IconButton>
-              <IconButton onClick={() => onDelete(task.id)}><Delete /></IconButton>
+              <IconButton onClick={() => onEdit(task)}><EditIcon /></IconButton>
+              <IconButton onClick={() => onDelete(task.id)}><DeleteIcon /></IconButton>
             </TableCell>
           </TableRow>
         ))}

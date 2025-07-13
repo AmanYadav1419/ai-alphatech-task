@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Task Management Application - AI-ALPHATECH ASSESSMENT
 
-## Getting Started
+A full-stack task management app using **Next.js 15**, **React 19**, **Node.js**, **Express**, **Material UI**, and **Bootstrap**.
 
-First, run the development server:
+---
 
+## 📦 Tech Stack
+
+| Layer        | Technology Used           | Purpose                                |
+|--------------|---------------------------|----------------------------------------|
+| Frontend     | Next.js 15 (App Router)   | Modern UI, routing, SSR support        |
+|              | React 19                  | Component-based UI                     |
+|              | TypeScript                | Type safety                            |
+|              | Axios                     | HTTP API calls                         |
+|              | Material UI               | UI Components                          |
+|              | Bootstrap 5               | Responsive layout                      |
+| Backend      | Node.js + Express         | REST API with CRUD functionality       |
+|              | JSON File / In-Memory     | Task storage for simplicity            |
+|              | Modular Code Structure    | Controllers, Routes, Utils             |
+
+---
+
+## ✅ Features Implemented
+
+- Add, view, edit, and delete tasks (CRUD)
+- Responsive design (mobile/tablet/desktop)
+- Search functionality with **debounce**
+- UI components via **Material UI**
+- Styled with **Bootstrap Grid + MUI**
+- Modular backend architecture (controllers/routes/utils)
+- Toast/snackbar alerts for operations
+- Status indication for completed/incomplete tasks
+- Component-based frontend (Next.js 15 + App Router)
+
+---
+
+## 💡 Future Features (Possible Additions)
+
+- ✅ JWT-based user authentication (login/signup)
+- ✅ Role-based access control
+- ✅ Priority levels (e.g., high, medium, low)
+- ✅ Due dates & calendar integration
+- ✅ MongoDB / PostgreSQL database integration
+- ✅ Task categorization / labels
+- ✅ Dark/light theme toggle
+- ✅ Pagination & sorting
+- ✅ File uploads & attachments
+
+---
+
+## 🔧 Local Setup Instructions
+
+### 📁 Backend Setup
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone repo and go to backend folder
+cd backend
+
+# Install dependencies
+npm install
+
+# Run server (port 5000)
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Backend runs at: `http://localhost:5000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📁 Frontend Setup (Next.js 15)
+```bash
+# Navigate to frontend folder
+cd frontend
 
-## Learn More
+# Create project (if not created)
+npx create-next-app@latest . --app --ts
 
-To learn more about Next.js, take a look at the following resources:
+# Install required packages
+npm install axios @mui/material @emotion/react @emotion/styled bootstrap
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Create .env.local file
+echo "NEXT_PUBLIC_API_URL=http://localhost:5000/tasks" > .env.local
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Run dev server
+npm run dev
+```
 
-## Deploy on Vercel
+Frontend runs at: `http://localhost:3000`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📂 Folder Structure Overview
+
+### Backend
+```
+backend/
+├── controllers/         # Logic
+├── routes/              # API Endpoints
+├── utils/               # File IO helpers
+├── tasks.json           # Task data
+└── index.js             # App Entry
+```
+
+### Frontend
+```
+frontend/
+├── app/                 # App Router Pages
+├── components/          # Task UI Components
+├── hooks/               # Custom React Hooks
+├── lib/                 # Axios API Services
+├── types/               # TypeScript Models
+├── styles/              # Global CSS
+└── .env.local           # API Base URL
+```
+
+
+Made with ❤️ by Aman Ramprakash Yadav
